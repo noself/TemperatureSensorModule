@@ -22,14 +22,14 @@
 #include <OneWire.h>
 
 //Get DallasTemperature Library here:  http://milesburton.com/Main_Page?title=Dallas_Temperature_Control_Library
-#include <DallasTemperature.h>
+#include <DallasTemperature.h> //you must include library DallasTemperature by Miles Burton, ...
 
 /*-----( Declare Constants and Pin Numbers )-----*/
 #define ONE_WIRE_BUS_PIN  14
 
 /*-----( Declare objects )-----*/
 // Setup a oneWire instance to communicate with any OneWire devices
-OneWire oneWire(ONE_WIRE_BUS_PIN, true);
+OneWire oneWire(ONE_WIRE_BUS_PIN); //modified
 
 // Pass our oneWire reference to Dallas Temperature.
 DallasTemperature sensors(&oneWire);
@@ -43,7 +43,7 @@ struct {
 
 byte nSensorsDiscovered;
 
-#include "mdns.h"
+#include "mdns.h"  //you must include library: esp8266_mdns by mrdunk
 
 /*
 
